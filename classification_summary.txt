@@ -1,0 +1,47 @@
+
+============================================================
+  TOXIC COMMENT CLASSIFICATION REPORT
+============================================================
+Model          : Logistic Regression (TF-IDF features)
+Dataset        : Jigsaw Toxic Comment Classification
+Training size  : 40,000 comments
+Test size      : 10,000 comments
+Date Generated : 2026-03-15 22:54
+
+------------------------------------------------------------
+DATASET OVERVIEW
+------------------------------------------------------------
+Total comments analysed : 159,571
+Toxic comments          : 16,225 (10.2%)
+Clean comments          : 143,346 (89.8%)
+
+------------------------------------------------------------
+MODEL PERFORMANCE
+------------------------------------------------------------
+Overall Accuracy: 93.2%
+
+              precision    recall  f1-score   support
+
+       Clean       0.98      0.95      0.96      9011
+       Toxic       0.62      0.80      0.70       989
+
+    accuracy                           0.93     10000
+   macro avg       0.80      0.87      0.83     10000
+weighted avg       0.94      0.93      0.94     10000
+
+------------------------------------------------------------
+KEY OBSERVATIONS
+------------------------------------------------------------
+1. Model performs strongly on explicit toxicity (profanity-based)
+2. Implicit threats without profanity are harder to detect
+   e.g. "I will find you and make you regret this" classified as Clean
+   This reflects a known limitation of keyword-based ML models
+3. False negative rate (missing toxic comments) is the critical 
+   metric in Trust & Safety contexts — 195 missed out of 989 toxic 
+   test comments (19.7% miss rate)
+4. Improvement areas: deep learning models (BERT) would better 
+   capture context and implicit threats
+
+============================================================
+END OF REPORT
+============================================================
